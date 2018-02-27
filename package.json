@@ -1,6 +1,6 @@
 {
   "name": "electron-print",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Library to print from electron app.",
   "main": "index.js",
   "scripts": {
