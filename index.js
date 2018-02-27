@@ -1,5 +1,6 @@
 'use strict';
-const BrowserWindow = require('electron');
+const electron = require('electron');
+const BrowserWindow = electron.remote.BrowserWindow;
 const fs = require('fs')
 const path = require('path')
 
