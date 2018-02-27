@@ -12,13 +12,11 @@
     "print",
     "printer"
   ],
-  "devDependencies": {
-    "electron": "^1.8.2"
-  },
   "author": "Crisman Carmona <crisman999@outlook.com>",
   "license": "ISC",
   "dependencies": {
     "file-system": "^2.2.2",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "electron": "^1.8.2"
   }
 }
