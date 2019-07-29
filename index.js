@@ -1,6 +1,6 @@
 'use strict';
 const electron = require('electron');
-const BrowserWindow = electron.BrowserWindow;
+const BrowserWindow = electron.remote.BrowserWindow;
 const fs = require('fs')
 const path = require('path')
 
@@ -10,12 +10,13 @@ module.exports = {
 
 function print(text){
   let win = new BrowserWindow({show: false})
-  fs.writeFile(path.join(__dirname,'print.txt'), text)
-  win.loadURL('file://'+__dirname+'/print.txt')
-  win.webContents.on('did-finish-load', () => {
-      win.webContents.print({silent:true})
-      setTimeout(function(){
-        win.close();
-      }, 1000);
+  fs.writeFile(path.join(__dirname,'../../../print.html'), text, () => {
+    win.loadURL('file://'+path.join(__dirname,'../../../print.html'))
+    win.webContents.on('did-finish-load', () => {
+        win.webContents.print({silent:true,deviceName:''})
+        setTimeout(function(){
+          win.close();
+        }, 3000);
+    })
   })
 }
